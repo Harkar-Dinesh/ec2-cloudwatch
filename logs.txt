@@ -1,0 +1,22 @@
+sudo yum install amazon-cloudwatch-agent -y
+
+sudo vi /opt/aws/amazon-cloudwatch-agent/bin/config.json
+{
+"logs": {
+"logs collected": {
+"files": {
+"collect list": [
+{
+"file path": "/var/log/*"
+"log group name": "ec2-all-logs"
+"log stream name": "{instance id}-all-logs"
+}
+]
+}
+}
+}
+}
+
+
+
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
