@@ -1,0 +1,23 @@
+{
+
+"Version": "2012-10-17",
+"Statement": [
+{
+"Sid": "AllowCloudWatchLogs",
+"Effect": "Allow",
+"Principal": {
+"Service": "logs.amazonaws.com"
+},
+"Action": [
+"s3:PutObject",
+"s3:GetBucketAcl",
+"s3:GetObject"
+],
+"Resource": [
+"arn:aws:s3 ::: qwertyuiksdf/*",
+"arn:aws:s3 ::: qwertyuiksdf"
+
+]
+}
+]
+}
